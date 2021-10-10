@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Student List App</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Student Management <img id="logo" src="http://4.bp.blogspot.com/-HZGae2MB3MY/UzJOsBsOVdI/AAAAAAAAQgM/GpWTMBBQdKQ/s1600/LOGO+UNIVERSITAS+KLABAT.png" alt=""> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="about.html">about</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    
+      <div class="container-lg">
+        <h1>Student Management</h1>
+        <h2>MiniApp</h2>
+        <hr>
+      </div>
+      
+
+      <div class="container-lg">
+      <div class="row mt-4">
+        <div class="col-8">
+          <h4>Add Student</h4>
+          <a class="btn" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Form New Student
+          </a>
+          <div class="collapse" id="collapseExample">
+
+          <form id="tableBiodata" name="biodata">
+            <div class="mb-3">
+              <label  >Student Id (NIM)</label>
+              <input type="text" name="nim" id="form-nim" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label  >Full Name</label>
+              <input type="text" name="fullName" id="form-name" class="form-control" >
+            </div>
+            
+            
+            <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+               <br><br>
+              </div> -->
+
+              Gender
+              <select name="gender" id="myGender" class="form-select" aria-label="Default select example">
+                <option selected>--Your Gender?--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <br>
+              
+
+              Faculty
+              <select name="fakultas" class="form-select" aria-label="Default select example">
+                <option selected>--Select Faculty--</option>
+                <option value="Filsafat">Filsafat</option>
+                <option value="Keguruan & Ilmu Pendidikan">Keguruan & Ilmu Pendidikan</option>
+                <option value="Pertanian">Pertanian</option>
+                <option value="Ilmu Komputer">Ilmu Komputer</option>
+                <option value="Ilmu Keperawatan">Ilmu Keperawatan</option>
+                <option value="Ilmu Ekonomi">Ilmu Ekonomi</option>
+                <option value="Akademi Secretary">Akademi Secretary</option>
+              </select>
+              <br>
+              Program of Study
+              <select name="prodi" class="form-select" aria-label="Default select example">
+                <option selected>--Select Program of Study--</option>
+                <option value="Filsafat Agama Kristen Advent">Filsafat Agama Kristen Advent</option>
+                <option value="Pendidikan Agama">Pendidikan Agama</option>
+                <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+                <option value="Ekonomi Koperasi">Ekonomi Koperasi</option>
+                <option value="Pendidikan Guru Luar Sekolah">Pendidikan Guru Luar Sekolah</option>
+                <option value="Agronomi">Agronomi </option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Teknik Informatika">Teknik Informatika</option>
+                <option value="Keperawatan">Keperawatan</option>
+                <option value="Profesi Ners">Profesi Ners</option>
+                <option value="Manajemen">Manajemen</option>
+                <option value="Akuntasi">Akuntasi</option>
+                <option value="Secretary">Secretary</option>
+                
+              </select>
+              <div class="d-grid gap-2">
+                  <br>  
+                </form>
+                <input type="button" id="butonSubmit" onclick="terimainput()" value="Simpan">
+                <input type="reset" value="Ulangi" onclick="hapus()">
+          
+              </div>
+              
+        </div>
+        </div>
+        
+  
+        <div class="col-4">
+          <h4>Filter Student by </h4>
+            <br>
+          <p>Faculty</p>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>--Select Faculty--</option>
+            <option value="Filsafat">Filsafat</option>
+            <option value="Keguruan & Ilmu Pendidikan">Keguruan & Ilmu Pendidikan</option>
+            <option value="Pertanian">Pertanian</option>
+            <option value="Ilmu Komputer">Ilmu Komputer</option>
+            <option value="Ilmu Keperawatan">Ilmu Keperawatan</option>
+            <option value="Ilmu Ekonomi">Ilmu Ekonomi</option>
+            <option value="Akademi Secretary">Akademi Secretary</option>
+          </select>
+          <br>
+          <div class="d-grid">
+            <button id="showFaculty" class="btn btn-primary" type="button" >Show Student</button>
+          </div>
+            <br>
+          <p>Program of Study</p>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>-- Select Program of Study--</option>
+            <option value="Filsafat Agama Kristen Advent">Filsafat Agama Kristen Advent</option>
+                <option value="Pendidikan Agama">Pendidikan Agama</option>
+                <option value="Pendidikan Bahasa Inggris">Pendidikan Bahasa Inggris</option>
+                <option value="Ekonomi Koperasi">Ekonomi Koperasi</option>
+                <option value="Pendidikan Guru Luar Sekolah">Pendidikan Guru Luar Sekolah</option>
+                <option value="Agronomi">Agronomi </option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Teknik Informatika">Teknik Informatika</option>
+                <option value="Keperawatan">Keperawatan</option>
+                <option value="Profesi Ners">Profesi Ners</option>
+                <option value="Manajemen">Manajemen</option>
+                <option value="Akuntasi">Akuntasi</option>
+                <option value="Secretary">Secretary</option>
+          </select>
+          <br>
+          <div class="d-grid">
+            <button id="showProdi" class="btn btn-primary" type="button">Show Student</button>
+          </div>
+        </div>
+        
+
+        <div class="container-lg">
+            <br><br>
+            <p class="ourStudent">Our Students</p>
+            <div class="form-outline">
+                <input type="text" id="pencarian" class="form-control" placeholder="Search Student by Name..."
+                aria-label="Search" />
+              </div>
+        </div>
+        
+        <div class="row mt-4">
+          <table id="tabelinput" class="table ">
+            <tr class="fortable">
+              <td>Student ID (NIM)</td>
+              <td>Full Name</td>
+              <td>Gender</td>
+              <td>Faculty</td>
+              <td>Program of Study</td>
+              <td>Action</td>
+            </tr>
+            <tr class="fortable">
+              <td>10230230</td>
+              <td>John Doe</td>
+              <td>Male</td>
+              <td>FIK</td>
+              <td>Sitem Informasi</td>
+              <td onclick="myAlert()"><a href="#" class="link-danger"><i class="bi bi-trash"></i></a></td>
+            </tr>
+            <tr class="fortable">
+              <td>22332323</td>
+              <td>Mary Doe</td>
+              <td>Female</td>
+              <td>FIK</td>
+              <td>Sitem Informasi</td>
+              <td onclick="myAlert()"><a href="#" class="link-danger"><i class="bi bi-trash"></i></a></td>
+            </tr>
+            <tr class="fortable">
+              <td>334344343</td>
+              <td>George Doe</td>
+              <td>Male</td>
+              <td>FIK</td>
+              <td>Sitem Informasi</td>
+              <td onclick="myAlert()"><a href="#" class="link-danger"><i class="bi bi-trash"></i></a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      </div>
+
+      <div class="forFooter">
+        <div class="container-fluid">
+            <footer >
+            <p class="text-center text-muted"> Made With <i class="fab fa-html5"></i><i class="fa-brands fa-css3-alt"></i><i class="fa-brands fa-js"></i></p>
+              
+              <p class="text-center text-muted">&copy; George Olaf <i class="bi bi-person-circle"></i></p>
+            </footer>
+          </div>
+        </div>
+            
+    
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>
